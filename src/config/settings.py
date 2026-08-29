@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     # API Keys
     openai_api_key: Optional[str] = Field(default=None, description="OpenAI API Key")
     gemini_api_key: Optional[str] = Field(default=None, description="Google Gemini API Key")
+    groq_api_key: Optional[str] = Field(default=None, description="Groq API Key (Free tier)")
     anthropic_api_key: Optional[str] = Field(default=None, description="Anthropic API Key")
 
     # LLM & Embedding Models
