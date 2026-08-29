@@ -130,11 +130,11 @@ class SecurityGuardrailGate:
 
         # Attempt fast litellm call if keys configured
         api_key = (
-            self.settings.groq_api_key 
+            getattr(self.settings, "groq_api_key", None) 
             or os.getenv("GROQ_API_KEY") 
-            or self.settings.gemini_api_key 
+            or getattr(self.settings, "gemini_api_key", None) 
             or os.getenv("GEMINI_API_KEY") 
-            or self.settings.openai_api_key
+            or getattr(self.settings, "openai_api_key", None)
         )
         if api_key:
             try:

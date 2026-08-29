@@ -286,11 +286,11 @@ with st.sidebar:
 
 # Dynamic Engine Instance using server environment credentials (Defaults to Groq Free Tier)
 active_api_key = (
-    settings.groq_api_key 
+    getattr(settings, "groq_api_key", None)
     or os.getenv("GROQ_API_KEY") 
-    or settings.gemini_api_key 
+    or getattr(settings, "gemini_api_key", None) 
     or os.getenv("GEMINI_API_KEY") 
-    or settings.openai_api_key 
+    or getattr(settings, "openai_api_key", None) 
     or os.getenv("OPENAI_API_KEY")
 )
 generator = LLMGenerator(

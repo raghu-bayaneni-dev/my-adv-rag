@@ -22,11 +22,11 @@ class LLMGenerator:
         self.model_name = model_name or settings.default_llm_model
         self.api_key = (
             api_key 
-            or settings.groq_api_key 
+            or getattr(settings, "groq_api_key", None) 
             or os.getenv("GROQ_API_KEY") 
-            or settings.gemini_api_key 
+            or getattr(settings, "gemini_api_key", None) 
             or os.getenv("GEMINI_API_KEY") 
-            or settings.openai_api_key
+            or getattr(settings, "openai_api_key", None)
         )
 
     def generate_response(self, query: str, chunks: List[DocumentChunk]) -> Tuple[str, List[Citation], bool]:
