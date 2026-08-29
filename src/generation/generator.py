@@ -19,6 +19,7 @@ class LLMGenerator:
     """
     def __init__(self, settings: Settings, model_name: str = None, api_key: str = None):
         self.settings = settings
+        self.model_name = model_name or settings.default_llm_model
         self.api_key = (
             api_key 
             or settings.groq_api_key 
