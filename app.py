@@ -212,7 +212,7 @@ with st.sidebar:
     <span class='tech-pill'>Python 3.11+</span>
     <span class='tech-pill'>Docling</span>
     <span class='tech-pill'>ChromaDB</span>
-    <span class='tech-pill'>Gemini 2.5</span>
+    <span class='tech-pill'>Groq Llama 3.3</span>
     <span class='tech-pill'>Ragas</span>
     """, unsafe_allow_html=True)
     st.divider()
@@ -284,11 +284,13 @@ with st.sidebar:
     st.caption("🔒 **Security**: Zero credential leakage to frontend. Automated test suite: `16/16 Pytest Passing`.")
 
 
-# Dynamic Engine Instance using server environment credentials
+# Dynamic Engine Instance using server environment credentials (Defaults to Groq Free Tier)
 active_api_key = (
-    settings.gemini_api_key 
-    or settings.openai_api_key 
+    settings.groq_api_key 
+    or os.getenv("GROQ_API_KEY") 
+    or settings.gemini_api_key 
     or os.getenv("GEMINI_API_KEY") 
+    or settings.openai_api_key 
     or os.getenv("OPENAI_API_KEY")
 )
 generator = LLMGenerator(

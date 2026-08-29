@@ -129,7 +129,13 @@ class SecurityGuardrailGate:
                 }
 
         # Attempt fast litellm call if keys configured
-        api_key = self.settings.gemini_api_key or self.settings.openai_api_key
+        api_key = (
+            self.settings.groq_api_key 
+            or os.getenv("GROQ_API_KEY") 
+            or self.settings.gemini_api_key 
+            or os.getenv("GEMINI_API_KEY") 
+            or self.settings.openai_api_key
+        )
         if api_key:
             try:
                 from litellm import completion

@@ -16,14 +16,14 @@ class Settings(BaseSettings):
     )
 
     # API Keys
-    openai_api_key: Optional[str] = Field(default=None, description="OpenAI API Key")
+    groq_api_key: Optional[str] = Field(default=None, description="Groq API Key (100% Free tier, 500 tokens/sec)")
     gemini_api_key: Optional[str] = Field(default=None, description="Google Gemini API Key")
-    groq_api_key: Optional[str] = Field(default=None, description="Groq API Key (Free tier)")
+    openai_api_key: Optional[str] = Field(default=None, description="OpenAI API Key")
     anthropic_api_key: Optional[str] = Field(default=None, description="Anthropic API Key")
 
-    # LLM & Embedding Models
-    default_llm_model: str = Field(default="gemini/gemini-2.5-flash", description="Default model for synthesis")
-    guardrail_llm_model: str = Field(default="gemini/gemini-2.5-flash", description="Model for guardrail classification")
+    # LLM & Embedding Models (Defaults to ultra-fast free-tier Groq)
+    default_llm_model: str = Field(default="groq/llama-3.3-70b-versatile", description="Default model for grounded synthesis")
+    guardrail_llm_model: str = Field(default="groq/llama-3.1-8b-instant", description="Fast model for guardrail classification")
     embedding_provider: str = Field(default="sentence-transformers", description="Embedding provider (sentence-transformers, openai, gemini)")
     embedding_model: str = Field(default="all-MiniLM-L6-v2", description="Embedding model name")
 
