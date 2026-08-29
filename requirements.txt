@@ -1,0 +1,34 @@
+# Core Models & Configuration
+pydantic>=2.7.0
+pydantic-settings>=2.2.0
+python-dotenv>=1.0.0
+
+# Document Ingestion & Parsing
+docling>=2.0.0
+pypdf>=4.2.0
+
+# Vector Store & Embeddings
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+
+# LLM Orchestration & API Clients
+litellm>=1.40.0
+google-genai>=0.1.0
+openai>=1.30.0
+
+# Security & Guardrails
+regex>=2024.5.15
+
+# Evaluation & Metrics
+ragas>=0.1.10
+datasets>=2.19.0
+pandas>=2.2.0
+
+# Dashboard & Visualizations
+streamlit>=1.35.0
+plotly>=5.22.0
+
+# Testing & Quality Gates
+pytest>=8.2.0
+pytest-asyncio>=0.23.0
+pytest-mock>=3.14.0

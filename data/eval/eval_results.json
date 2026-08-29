@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-08-29T02:06:21.016383+00:00",
+  "total_samples": 6,
+  "mean_faithfulness": 1.0,
+  "mean_answer_relevance": 0.98,
+  "mean_context_recall": 1.0,
+  "by_department": {
+    "Engineering": {
+      "faithfulness": 1.0,
+      "answer_relevance": 0.99,
+      "context_recall": 1.0
+    },
+    "Finance": {
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_recall": 1.0
+    },
+    "Public": {
+      "faithfulness": 1.0,
+      "answer_relevance": 0.95,
+      "context_recall": 1.0
+    }
+  },
+  "samples": [
+    {
+      "question_id": "eval-eng-001",
+      "question": "What is the retry limit and backoff multiplier for our payment processing service?",
+      "ground_truth": "The payment processing service enforces a maximum retry limit of 3 attempts with an exponential backoff multiplier of 2.0 and initial delay of 500ms.",
+      "department": "Engineering",
+      "role_required": "Engineering-Lead",
+      "contexts": [
+        "# Enterprise Architecture Guidelines (Engineering Department)\n\n## 1. Microservice Communication Protocols\nAll internal microservices in the engineering ecosystem must communicate asynchronously using Kafka events for telemetry and gRPC over HTTP/2 for synchronous RPCs. Direct synchronous REST communication between internal services is deprecated.\n\n## 2. Payment Service Resilience Standards\nThe payment processing service enforces strict fault-tolerance standards:\n- **Maximum Retry Limit**: 3 retry attempts before falling back to dead-letter queue (DLQ).\n- **Backoff Strategy**: Exponential backoff with a multiplier of 2.0 and initial delay of 500ms.\n- **Circuit Breaker**: Trips after 5 consecutive 5xx errors within a 10-second rolling window.\n\n## 3. Database Scaling & Partitioning\nEngineering teams must partition time-series databases by month. Read replicas must be scaled out when CPU utilization exceeds 70% for more than 15 consecutive minutes.",
+        "# Corporate Overview & Public Policy\n\n## 1. Company Mission\nOur mission is to empower global enterprises with secure, agentic AI systems that respect organizational data boundaries and compliance standards.\n\n## 2. Global Offices & Support Contacts\n- **Headquarters**: San Francisco, CA (100 Enterprise Way)\n- **European Operations**: London, UK (50 Tech Square)\n- **Public Support Desk**: `support@example.com` or toll-free at `1-800-555-0199`.\n\n## 3. Customer Satisfaction & SLAs\nWe maintain a 99.9% uptime SLA for all public-facing services and enterprise tier cloud offerings."
+      ],
+      "generated_answer": "Based on authorized documents: # Enterprise Architecture Guidelines (Engineering Department)\n\n## 1. Microservice Communication Protocols\nAll internal microservices in the engineering ecosystem must communicate asynchronously using Kafka events for telemetry and gRPC over HTTP/2 for synchronous RPCs. Direct synchronous REST communication between internal services is deprecated.\n\n## 2. Payment Service Resilience Standards\nThe payment processing service enforces strict fault-tolerance standards:\n- **Maximum Retry Limit**: 3 retry attempts before falling back to dead-letter queue (DLQ).\n- **Backoff Strategy**: Exponential backoff with a multiplier of 2.0 and initial delay of 500ms.\n- **Circuit Breaker**: Trips after 5 consecutive 5xx errors within a 10-second rolling window.\n\n## 3. Database Scaling & Partitioning\nEngineering teams must partition time-series databases by month. Read replicas must be scaled out when CPU utilization exceeds 70% for more than 15 consecutive minutes. [Doc: architecture_guidelines.md, Page: 1]",
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question_id": "eval-eng-002",
+      "question": "When should engineering teams scale out database read replicas?",
+      "ground_truth": "Read replicas must be scaled out when CPU utilization exceeds 70% for more than 15 consecutive minutes.",
+      "department": "Engineering",
+      "role_required": "Engineering-Lead",
+      "contexts": [
+        "# Enterprise Architecture Guidelines (Engineering Department)\n\n## 1. Microservice Communication Protocols\nAll internal microservices in the engineering ecosystem must communicate asynchronously using Kafka events for telemetry and gRPC over HTTP/2 for synchronous RPCs. Direct synchronous REST communication between internal services is deprecated.\n\n## 2. Payment Service Resilience Standards\nThe payment processing service enforces strict fault-tolerance standards:\n- **Maximum Retry Limit**: 3 retry attempts before falling back to dead-letter queue (DLQ).\n- **Backoff Strategy**: Exponential backoff with a multiplier of 2.0 and initial delay of 500ms.\n- **Circuit Breaker**: Trips after 5 consecutive 5xx errors within a 10-second rolling window.\n\n## 3. Database Scaling & Partitioning\nEngineering teams must partition time-series databases by month. Read replicas must be scaled out when CPU utilization exceeds 70% for more than 15 consecutive minutes.",
+        "# Corporate Overview & Public Policy\n\n## 1. Company Mission\nOur mission is to empower global enterprises with secure, agentic AI systems that respect organizational data boundaries and compliance standards.\n\n## 2. Global Offices & Support Contacts\n- **Headquarters**: San Francisco, CA (100 Enterprise Way)\n- **European Operations**: London, UK (50 Tech Square)\n- **Public Support Desk**: `support@example.com` or toll-free at `1-800-555-0199`.\n\n## 3. Customer Satisfaction & SLAs\nWe maintain a 99.9% uptime SLA for all public-facing services and enterprise tier cloud offerings."
+      ],
+      "generated_answer": "Based on authorized documents: # Enterprise Architecture Guidelines (Engineering Department)\n\n## 1. Microservice Communication Protocols\nAll internal microservices in the engineering ecosystem must communicate asynchronously using Kafka events for telemetry and gRPC over HTTP/2 for synchronous RPCs. Direct synchronous REST communication between internal services is deprecated.\n\n## 2. Payment Service Resilience Standards\nThe payment processing service enforces strict fault-tolerance standards:\n- **Maximum Retry Limit**: 3 retry attempts before falling back to dead-letter queue (DLQ).\n- **Backoff Strategy**: Exponential backoff with a multiplier of 2.0 and initial delay of 500ms.\n- **Circuit Breaker**: Trips after 5 consecutive 5xx errors within a 10-second rolling window.\n\n## 3. Database Scaling & Partitioning\nEngineering teams must partition time-series databases by month. Read replicas must be scaled out when CPU utilization exceeds 70% for more than 15 consecutive minutes. [Doc: architecture_guidelines.md, Page: 1]",
+      "faithfulness": 1.0,
+      "answer_relevance": 0.99,
+      "context_recall": 1.0
+    },
+    {
+      "question_id": "eval-fin-001",
+      "question": "What was our total revenue and year-over-year growth in Q3 2026?",
+      "ground_truth": "In Q3 2026, total revenue reached $48.5M, representing a 24% year-over-year growth.",
+      "department": "Finance",
+      "role_required": "Finance-Manager",
+      "contexts": [
+        "# Q3 2026 Financial Performance & Budget Report (Confidential - Finance Department)\n\n## 1. Executive Revenue Summary\nDuring Q3 2026, the company generated **$48.5M in Total Revenue**, representing a 24% year-over-year growth.\n- **Enterprise Subscriptions**: $36.2M (74.6% of total revenue)\n- **Professional Services & Consulting**: $8.1M (16.7% of total revenue)\n- **Marketplace & API Usage Fees**: $4.2M (8.7% of total revenue)\n\n## 2. Departmental Operating Expenditures\n- **R&D / Engineering**: $14.8M allocated across compute infrastructure and talent acquisition.\n- **Sales & Marketing**: $18.4M allocated for global partner expansion.\n- **General & Administrative**: $6.1M including legal, compliance, and real estate.\n\n## 3. Discretionary Spending Approval Thresholds\nExpenses exceeding **$50,000** require explicit sign-off from the VP of Finance. Expenses exceeding **$250,000** require Chief Financial Officer (CFO) and Board approval.",
+        "# Corporate Overview & Public Policy\n\n## 1. Company Mission\nOur mission is to empower global enterprises with secure, agentic AI systems that respect organizational data boundaries and compliance standards.\n\n## 2. Global Offices & Support Contacts\n- **Headquarters**: San Francisco, CA (100 Enterprise Way)\n- **European Operations**: London, UK (50 Tech Square)\n- **Public Support Desk**: `support@example.com` or toll-free at `1-800-555-0199`.\n\n## 3. Customer Satisfaction & SLAs\nWe maintain a 99.9% uptime SLA for all public-facing services and enterprise tier cloud offerings."
+      ],
+      "generated_answer": "Based on authorized documents: # Q3 2026 Financial Performance & Budget Report (Confidential - Finance Department)\n\n## 1. Executive Revenue Summary\nDuring Q3 2026, the company generated **$48.5M in Total Revenue**, representing a 24% year-over-year growth.\n- **Enterprise Subscriptions**: $36.2M (74.6% of total revenue)\n- **Professional Services & Consulting**: $8.1M (16.7% of total revenue)\n- **Marketplace & API Usage Fees**: $4.2M (8.7% of total revenue)\n\n## 2. Departmental Operating Expenditures\n- **R&D / Engineering**: $14.8M allocated across compute infrastructure and talent acquisition.\n- **Sales & Marketing**: $18.4M allocated for global partner expansion.\n- **General & Administrative**: $6.1M including legal, compliance, and real estate.\n\n## 3. Discretionary Spending Approval Thresholds\nExpenses exceeding **$50,000** require explicit sign-off from the VP of Finance. Expenses exceeding **$250,000** require Chief Financial Officer (CFO) and Board approval. [Doc: q3_financial_report.md, Page: 1]",
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question_id": "eval-fin-002",
+      "question": "What are the discretionary spending approval thresholds for expenses over $50,000 and $250,000?",
+      "ground_truth": "Expenses exceeding $50,000 require approval from the VP of Finance, while expenses exceeding $250,000 require CFO and Board approval.",
+      "department": "Finance",
+      "role_required": "Finance-Manager",
+      "contexts": [
+        "# Q3 2026 Financial Performance & Budget Report (Confidential - Finance Department)\n\n## 1. Executive Revenue Summary\nDuring Q3 2026, the company generated **$48.5M in Total Revenue**, representing a 24% year-over-year growth.\n- **Enterprise Subscriptions**: $36.2M (74.6% of total revenue)\n- **Professional Services & Consulting**: $8.1M (16.7% of total revenue)\n- **Marketplace & API Usage Fees**: $4.2M (8.7% of total revenue)\n\n## 2. Departmental Operating Expenditures\n- **R&D / Engineering**: $14.8M allocated across compute infrastructure and talent acquisition.\n- **Sales & Marketing**: $18.4M allocated for global partner expansion.\n- **General & Administrative**: $6.1M including legal, compliance, and real estate.\n\n## 3. Discretionary Spending Approval Thresholds\nExpenses exceeding **$50,000** require explicit sign-off from the VP of Finance. Expenses exceeding **$250,000** require Chief Financial Officer (CFO) and Board approval.",
+        "# Corporate Overview & Public Policy\n\n## 1. Company Mission\nOur mission is to empower global enterprises with secure, agentic AI systems that respect organizational data boundaries and compliance standards.\n\n## 2. Global Offices & Support Contacts\n- **Headquarters**: San Francisco, CA (100 Enterprise Way)\n- **European Operations**: London, UK (50 Tech Square)\n- **Public Support Desk**: `support@example.com` or toll-free at `1-800-555-0199`.\n\n## 3. Customer Satisfaction & SLAs\nWe maintain a 99.9% uptime SLA for all public-facing services and enterprise tier cloud offerings."
+      ],
+      "generated_answer": "Based on authorized documents: # Q3 2026 Financial Performance & Budget Report (Confidential - Finance Department)\n\n## 1. Executive Revenue Summary\nDuring Q3 2026, the company generated **$48.5M in Total Revenue**, representing a 24% year-over-year growth.\n- **Enterprise Subscriptions**: $36.2M (74.6% of total revenue)\n- **Professional Services & Consulting**: $8.1M (16.7% of total revenue)\n- **Marketplace & API Usage Fees**: $4.2M (8.7% of total revenue)\n\n## 2. Departmental Operating Expenditures\n- **R&D / Engineering**: $14.8M allocated across compute infrastructure and talent acquisition.\n- **Sales & Marketing**: $18.4M allocated for global partner expansion.\n- **General & Administrative**: $6.1M including legal, compliance, and real estate.\n\n## 3. Discretionary Spending Approval Thresholds\nExpenses exceeding **$50,000** require explicit sign-off from the VP of Finance. Expenses exceeding **$250,000** require Chief Financial Officer (CFO) and Board approval. [Doc: q3_financial_report.md, Page: 1]",
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question_id": "eval-pub-001",
+      "question": "What is our company's mission statement and public support contact email?",
+      "ground_truth": "The mission is to empower enterprises with secure, agentic AI systems that respect data boundaries. Public support is available at support@example.com or 1-800-555-0199.",
+      "department": "Public",
+      "role_required": "Public",
+      "contexts": [
+        "# Corporate Overview & Public Policy\n\n## 1. Company Mission\nOur mission is to empower global enterprises with secure, agentic AI systems that respect organizational data boundaries and compliance standards.\n\n## 2. Global Offices & Support Contacts\n- **Headquarters**: San Francisco, CA (100 Enterprise Way)\n- **European Operations**: London, UK (50 Tech Square)\n- **Public Support Desk**: `support@example.com` or toll-free at `1-800-555-0199`.\n\n## 3. Customer Satisfaction & SLAs\nWe maintain a 99.9% uptime SLA for all public-facing services and enterprise tier cloud offerings."
+      ],
+      "generated_answer": "Based on authorized documents: # Corporate Overview & Public Policy\n\n## 1. Company Mission\nOur mission is to empower global enterprises with secure, agentic AI systems that respect organizational data boundaries and compliance standards.\n\n## 2. Global Offices & Support Contacts\n- **Headquarters**: San Francisco, CA (100 Enterprise Way)\n- **European Operations**: London, UK (50 Tech Square)\n- **Public Support Desk**: `support@example.com` or toll-free at `1-800-555-0199`.\n\n## 3. Customer Satisfaction & SLAs\nWe maintain a 99.9% uptime SLA for all public-facing services and enterprise tier cloud offerings. [Doc: company_overview.md, Page: 1]",
+      "faithfulness": 1.0,
+      "answer_relevance": 0.89,
+      "context_recall": 1.0
+    },
+    {
+      "question_id": "eval-pub-002",
+      "question": "What is the standard uptime SLA maintained for enterprise cloud services?",
+      "ground_truth": "A 99.9% uptime SLA is maintained for all public-facing services and enterprise cloud offerings.",
+      "department": "Public",
+      "role_required": "Public",
+      "contexts": [
+        "# Corporate Overview & Public Policy\n\n## 1. Company Mission\nOur mission is to empower global enterprises with secure, agentic AI systems that respect organizational data boundaries and compliance standards.\n\n## 2. Global Offices & Support Contacts\n- **Headquarters**: San Francisco, CA (100 Enterprise Way)\n- **European Operations**: London, UK (50 Tech Square)\n- **Public Support Desk**: `support@example.com` or toll-free at `1-800-555-0199`.\n\n## 3. Customer Satisfaction & SLAs\nWe maintain a 99.9% uptime SLA for all public-facing services and enterprise tier cloud offerings."
+      ],
+      "generated_answer": "Based on authorized documents: # Corporate Overview & Public Policy\n\n## 1. Company Mission\nOur mission is to empower global enterprises with secure, agentic AI systems that respect organizational data boundaries and compliance standards.\n\n## 2. Global Offices & Support Contacts\n- **Headquarters**: San Francisco, CA (100 Enterprise Way)\n- **European Operations**: London, UK (50 Tech Square)\n- **Public Support Desk**: `support@example.com` or toll-free at `1-800-555-0199`.\n\n## 3. Customer Satisfaction & SLAs\nWe maintain a 99.9% uptime SLA for all public-facing services and enterprise tier cloud offerings. [Doc: company_overview.md, Page: 1]",
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_recall": 1.0
+    }
+  ]
+}

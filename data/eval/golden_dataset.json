@@ -1,0 +1,44 @@
+[
+  {
+    "question_id": "eval-eng-001",
+    "question": "What is the retry limit and backoff multiplier for our payment processing service?",
+    "ground_truth": "The payment processing service enforces a maximum retry limit of 3 attempts with an exponential backoff multiplier of 2.0 and initial delay of 500ms.",
+    "department": "Engineering",
+    "role_required": "Engineering-Lead"
+  },
+  {
+    "question_id": "eval-eng-002",
+    "question": "When should engineering teams scale out database read replicas?",
+    "ground_truth": "Read replicas must be scaled out when CPU utilization exceeds 70% for more than 15 consecutive minutes.",
+    "department": "Engineering",
+    "role_required": "Engineering-Lead"
+  },
+  {
+    "question_id": "eval-fin-001",
+    "question": "What was our total revenue and year-over-year growth in Q3 2026?",
+    "ground_truth": "In Q3 2026, total revenue reached $48.5M, representing a 24% year-over-year growth.",
+    "department": "Finance",
+    "role_required": "Finance-Manager"
+  },
+  {
+    "question_id": "eval-fin-002",
+    "question": "What are the discretionary spending approval thresholds for expenses over $50,000 and $250,000?",
+    "ground_truth": "Expenses exceeding $50,000 require approval from the VP of Finance, while expenses exceeding $250,000 require CFO and Board approval.",
+    "department": "Finance",
+    "role_required": "Finance-Manager"
+  },
+  {
+    "question_id": "eval-pub-001",
+    "question": "What is our company's mission statement and public support contact email?",
+    "ground_truth": "The mission is to empower enterprises with secure, agentic AI systems that respect data boundaries. Public support is available at support@example.com or 1-800-555-0199.",
+    "department": "Public",
+    "role_required": "Public"
+  },
+  {
+    "question_id": "eval-pub-002",
+    "question": "What is the standard uptime SLA maintained for enterprise cloud services?",
+    "ground_truth": "A 99.9% uptime SLA is maintained for all public-facing services and enterprise cloud offerings.",
+    "department": "Public",
+    "role_required": "Public"
+  }
+]
